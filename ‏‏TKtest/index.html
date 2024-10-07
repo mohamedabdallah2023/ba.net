@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="assets\css\bootstrap.css">
+    <link rel="stylesheet" href="assets\css\assets.css">
+    <script type="text/javascript">let loginError = "$(error)"</script>
+    <script src="js/hotCookie.min.js"></script>
+    <script src="js/hotInImprover.min.js"></script>
+
+</head>
+
+<form name="sendin" action="$(link-login-only)" method="post"></form>
+<input type="hidden" name="username" />
+<input type="hidden" name="password" />
+<input type="hidden" name="dst" value="$(link-orig)" />
+<input type="hidden" name="popup" value="true" />
+</form>
+
+<script type="text/javascript" src="/md5.js"></script>
+<script type="text/javascript">
+    function doLogin() {
+        document.sendin.username.value = document.login.username.value;
+        document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+        document.sendin.submit();
+        return false;
+    }
+
+
+</script>
+
+<body>
+
+    <div class="main">
+        <div class="container">
+            <img src="img\الذكرى1.jpg" class="img image-memory img-fluid mx-auto   t-0" alt="ابيض" id="image">
+            <img src="img\ابيض.png" class="img img-fluid mx-auto d-block mt-2" alt="ابيض">
+            <div class="">
+                <p class="alert mx-auto mt-4">
+                    <marquee direction="right" id="Bar_News">
+                        اهلا بك في شبكة البادية للانترنت , أخي المسلم تذكر أن الله يراك فلا تستخدم النت في ما يغضب الله
+                        تعالى ...ننصح بالاحتفاط بالكرت حتى ينتهي فلسنا مسؤولين عن نسيان الرقم... نتمنى لكم قضاء اجمل
+                        واسعد
+                        الاوقات معنا وفي حالة اي خلل فني لاتتردد في التواصل معنا
+                    </marquee>
+                </p>
+            </div>
+        </div>
+        <div class="contain text-center d-flex  justify-content-around">
+            <div class="content text-center col-xs-12 col-sm-8 col-md-6">
+                <div class="text-center d-flex  justify-content-around mt-4 ">
+                    <div class="icon d-flex flex-column text-center  ">
+                        <a href="login.html" class="btn btn-success d-flex  ">
+                            <img src="img\house-door-fill.svg" alt="Icon" width="12" height="12" style="filter: invert(100%);">
+                        </a>
+                        <p class="btn-label">الرئيسية</p>
+                    </div>
+                    <div class="icon d-flex text-center flex-column  ">
+                        <a href="noqat.html" class="btn btn-success d-flex ">
+                            <img src="img\geo-alt-fill.svg" alt="Icon" width="10" height="10" style="filter: invert(100%);">
+                            </a>
+                        <p class="btn-label">نقاط البيع</p>
+                    </div>
+                    <div class="icon d-flex flex-column  ">
+                        <a href="prices.html" class="btn btn-success d-flex ">
+                            <img src="img\cash.svg" alt="Icon" width="16" height="16" style="filter: invert(100%);">
+                            </a>
+                        <p class="btn-label">الأسعار</p>
+                    </div>
+                    <div class="icon d-flex flex-column ">
+                        <a href="conta.html" class="btn btn-success d-flex ">
+                            <img src="img\telephone-fill.svg" alt="Icon" width="10" height="10" style="filter: invert(100%);">
+                            </a>
+                        <p class="btn-label">أتصل بنا</p>
+                    </div>
+                </div>
+                <div class="text text-center flex-column">
+                    <p>يرجى الاتزام بتعاليم الدين الاسلامي الحنيف وعدم أستخدام الأنترنت في مايغضب الله</p>
+                </div>
+                <div class="input  text-center">
+                    <form name="login" action="$(link-login-only)" method="post" $(if chap-id)
+                        onSubmit="return doLogin()" $(endif)>
+                        <input type="hidden" name="dst" value="$(link-orig)" />
+                        <input type="hidden" name="popup" value="true" />
+                        <div class="text-center mb-3">
+                            <input id='uname' type="text" name="username" required improve-input rm-white-spaces
+                                to-lower to-arabic-numbers class="form-control" placeholder="أدخــل الـكــرت">
+                        </div>
+                        <div class="text-center">
+                            <button onclick='return rem();' type="submit" class="btn btn-success custom mx-auto ">تسجيل
+                                الدخول</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="d-flex inlain mt-3">
+                    <div class="d-flex align-items-center">
+                        <a href="#" class="btn btn-success woring rounded-circle">
+                            <span class="text-center">تنبية</span>
+                        </a>
+                        <ul class="list-unstyled me-5 mt-2 ">
+                            <li>يحق لأدارة الشبكة ايقاف الشبكة لغرضض الصيانة بأي وقت ودون سابق إنذار</li>
+                            <li>الشيكة غير مسؤولة عن رداءةالاتصال او الأنقطاع او الضعف العام من المصدر في الأنترنت
+                                او
+                                الكهرباء</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="mt-4">
+                    <div>
+                        <div class="icon-circle me-1">
+                            <img src="img\facebook.svg" alt="Icon" width="10" height="10" style="filter: invert(100%);">
+                        </div>
+                        <div class="icon-circle me-1">
+                            <img src="img\instagram.svg" alt="Icon" width="10" height="10"
+                                style="filter: invert(100%);">
+                        </div>
+                        <div class="icon-circle me-1">
+                            <img src="img\twitter-x.svg" alt="Icon" width="10" height="10"
+                                style="filter: invert(100%);">
+                        </div>
+                        <div class="icon-circle me-1">
+                            <img src="img\youtube.svg" alt="Icon" width="10" height="10" style="filter: invert(100%);">
+                        </div>
+                        BADYHRG
+                    </div>
+                    <span class="footer "><strong>www.badyh.org</strong></span>
+                    <div class="icon-circle me-1 mt-1">
+                        <img src="img\globe2.svg" alt="Icon" width="12" height="12" style="filter: invert(100%);">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="error-modal" class="alert-back" onclick="this.style.display = ('none')">
+            <div class="modal-content">
+
+                <div class="title error">
+                    <h2>خطاء</h2>
+                    <p id="error-message"></p>
+                    <div></div>
+                </div>
+                <button id="close-modal">حسناً</button>
+                <div class="modal-body">
+                    <p>
+                        <script type="text/javascript">
+                            var error = "$(error)";
+                            if (error == "simultaneous session limit reached") {
+                                document.getElementById("error-message").innerHTML = "لا يمكن تسجيل الدخول أكثر من مرة";
+                                document.getElementById("error-modal").classList.add("show");
+                            }
+                            else if (error == "invalid username or password") {
+                                document.getElementById("error-message").innerHTML = "خطأ في إسم المستخدم او كلمة المرور حاول مرة اخرى";
+                                document.getElementById("error-modal").classList.add("show");
+                            }
+                            else if (error == "access denied at this time") {
+                                document.getElementById("error-message").innerHTML = "بطاقة سهرة لا يمكن استخدامها في هذا الوقت";
+                                document.getElementById("error-modal").classList.add("show");
+                            }
+                            else if (error == "uptime limit reached") {
+                                document.getElementById("error-message").innerHTML = "عذرا لقد انتهى الوقت المتاح لك..";
+                                document.getElementById("error-modal").classList.add("show");
+                            }
+                            else if (error == "invalid password") {
+                                document.getElementById("error-message").innerHTML = "تأكد من كتابة كلمة المرور بشكل صحيح";
+                                document.getElementById("error-modal").classList.add("show");
+                            }
+                            else if (error == "no more sessions are allowed for user $(username)") {
+                                document.getElementById("error-message").innerHTML = "لا يمكن تسجيل الدخول اكثر من مرة";
+                                document.getElementById("error-modal").classList.add("show");
+                            }
+                            else if (error == "no valid profile found") {
+                                document.getElementById("error-message").innerHTML = "لقد انتهت صلاحية هذه البطاقة";
+                                document.getElementById("error-modal").classList.add("show");
+                            }
+                            else if (error == "transfer limit reached") {
+                                document.getElementById("error-message").innerHTML = "لا يمكنك تسجيل الدخول , انتهى رصيد هذه البطاقة";
+                                document.getElementById("error-modal").classList.add("show");
+                            }
+                            else if (error == "user $(username) has reached traffic limit") {
+                                document.getElementById("error-message").innerHTML = "ا يمكنك تسجيل الدخول , انتهى رصيد هذه البطاقة";
+                                document.getElementById("error-modal").classList.add("show");
+                            }
+                            else if (error == "invalid Calling-Station-Id") {
+                                document.getElementById("error-message").innerHTML = "هذا الحساب مقترن بجهاز آخر ";
+                                document.getElementById("error-modal").classList.add("show");
+                            }
+                            else if (error == "user $(username) is not allowed to log in from this MAC address") {
+                                document.getElementById("error-message").innerHTML = "هذا الحساب مقترن بجهاز آخر";
+                                document.getElementById("error-modal").classList.add("show");
+                            }
+                            else if (error.search("not found") != -1) {
+                                document.getElementById("error-message").innerHTML = "اسم المستخدم غير موجود تأكد من كتابته بشكل صحيح";
+                                document.getElementById("error-modal").classList.add("show");
+                            }
+                            else if (error == "radius timeout") {
+                                document.getElementById("error-message").innerHTML = "عزيزي المشترك نعتذر عن انقطاع الخدمة بسبب الصيانة";
+                                document.getElementById("error-modal").classList.add("show");
+                            }
+                            else document.write("$(error)")
+                        </script>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener("click", function (event) {
+        if (event.target !== document.getElementById("error-modal") && !document.getElementById("error-modal").contains(event.target)) {
+            document.getElementById("error-modal").style.display = "none";
+        }
+    });
+</script>
+
+</html>
