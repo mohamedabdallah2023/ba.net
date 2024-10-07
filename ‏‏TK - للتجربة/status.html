@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+	<title>تفاصيل الأستخدام</title>
+	<meta charset="UTF-8">
+	$(if refresh-timeout) 
+	<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+	$(endif)
+	<meta charset="windows-1256" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="refresh" content="300">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0' name='viewport' />
+	<link href="fonts/notofont.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/assets.css" />
+	<link rel="stylesheet" href="assets\css\bootstrap.css">
+	<script language="JavaScript">
+		<!--
+			$(if advert - pending == 'yes')
+			var popup = '';
+		function focusAdvert() {
+			if (window.focus) popup.focus();
+		}
+		function openAdvert() {
+			popup = open('$(link-advert)', 'hotspot_advert', '');
+			setTimeout("focusAdvert()", 1000);
+		}
+		$(endif)
+		function openLogout() {
+			if (window.name != 'hotspot_status') return true;
+			open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+			window.close();
+			return false;
+		}
+		//-->
+	</script>
+	<script language="JavaScript">
+
+		function readablizeBytes(bytes) {
+			var s = ['bytes', 'kb', 'MB', 'GB', 'TB', 'PB'];
+			var e = Math.floor(Math.log(bytes) / Math.log(1024));
+			return (bytes / Math.pow(1024, Math.floor(e))).toFixed(2) + " " + s[e];
+		}
+
+	</script>
+
+	<script language="JavaScript">
+
+		function arabicBytes(original) {
+			var rv;
+			var int1 = original;
+			var GB = " �������� ", MB = " �������� ", KB = " �������� ", B = " ���� ";
+			if (int1 < 1024) rv = int1 + B;
+			else if (int1 < (1024 * 1024)) rv = Math.round(int1 / 1024) + KB;
+			else if (int1 < (1024 * 1024 * 1024)) rv = Math.round(int1 / (1024 * 1024)) + MB;
+			else rv = Math.round(int1 / (1024 * 1024 * 1024)) + GB;
+			return rv;
+		}
+	</script>
+	<script language="JavaScript">
+		function arabicTime(original) {
+			var str1 = original, remaining = original;
+			var rv = "";
+			var d_u = " ��� ", h_u = " ���� ", m_u = " ����� ", s_u = " ����� ";
+			var d = "", h = "", m = "", s = "";
+
+			if (str1 == "") return "";
+
+			if (str1.indexOf("d") >= 0) {
+				var str = str1.split("d");
+				d = (str[0] != "") ? (str[0] + d_u) : "";
+				remaining = str[1];
+			}
+			if (str1.indexOf("h") >= 0) {
+				var str = remaining.split("h");
+				h = (str[0] != "") ? (str[0] + h_u) : "";
+				remaining = str[1];
+			}
+			if (str1.indexOf("m") >= 0) {
+				var str = remaining.split("m");
+				m = (str[0] != "") ? (str[0] + m_u) : "";
+				remaining = str[1];
+			}
+			if (str1.indexOf("s") >= 0) {
+				var str = remaining.split("s");
+				s = (str[0] != "") ? (str[0] + s_u) : "";
+				remaining = str[1];
+			}
+			return d + h + m + s;
+		}
+	</script>
+	<script language="JavaScript">
+
+		function readablizeBytes(bytes) {
+			var s = ['&#1576;&#1575;&#1610;&#1578;', '&#1603;&#1610;&#1604;&#1608;&#1576;&#1575;&#1610;&#1578;', '&#1605;&#1610;&#1580;&#1575;&#1576;&#1575;&#1610;&#1578;', '&#1580;&#1610;&#1580;&#1575;&#1576;&#1575;&#1610;&#1578;', '&#1578;&#1610;&#1585;&#1575;&#1576;&#1575;&#1610;&#1578;', 'PB'];
+			var e = Math.floor(Math.log(bytes) / Math.log(1024));
+			return (bytes / Math.pow(1024, Math.floor(e))).toFixed(2) + " " + s[e];
+		}
+
+	</script>
+
+
+
+	<script type=text/javascript>
+    function delrem(){
+     document.cookie = "uname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+   
+       }
+   </script>
+
+	<style>
+
+	</style>
+</head>
+
+<body $(if advert-pending=='yes' ) onLoad="openAdvert()" $(endif) style="background-color: white;">
+	<div class="main">
+		<div class="container">
+			<img src="img\ابيض.png" class="img img-fluid mx-auto d-block mt-2" alt="ابيض">
+
+		</div>
+		<div class="contain2 text-center d-flex  justify-content-around"></div>
+
+		<div class="mycard flex-column">
+			<table class="mb-1">
+				<tr class="">
+					<th>تفاصيل الأستخدام</th>
+				</tr>
+			</table>
+			<table class="mb-1">
+				<tr class="">
+					<td style="border-radius: 10px;">رقم الكرت المسجل على الكرت
+						<br>11111111
+					</td>
+				</tr>
+			</table>
+			<table class="mb-1">
+				<tr class="">
+					<td>الوقت المتبقي
+						<br>
+						<script type="text/javascript">
+							document.write(arabicTime("$(session-time-left)"));
+						</script>
+					</td>
+				</tr>
+			</table>
+			<table class="mb-1">
+				<tr class=" ">
+					<td>التحميل المستخدم
+						<br>
+						<script type="text/javascript">
+							document.write(arabicBytes("$(bytes-out)"));
+						</script>
+					</td>
+				</tr>
+			</table>
+			<table class="mb-1">
+				<tr class=" ">
+					<td>التحميل المتبقي
+						<br>
+						<script type=text/javascript>
+							var INFO="$(remain-bytes-total-nice)";
+							if(INFO=="unlimited"){document.write("����� ")}else{document.write(arabicBytes($(remain-bytestotal)))};
+						</script>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+			$(if login-by == 'trial')
+					$(elif login-by != 'mac')
+					$(endif)
+					$(if session-time-left)
+					$(else)
+					$(endif)
+					$(if blocked == 'yes')
+					$(elif refresh-timeout)
+					$(endif)
+					$(if login-by-mac != 'yes')
+			<input type="hidden" name="erase-cookie" value="on">
+			<div class="d-flex  justify-content-around text-center">
+					<button type="submit" class="last btn btn-success ">
+						تسجــيل خــروج  
+						<img src="img\box-arrow-right.svg" alt="Icon" class="me-2"  width="19" height="19" style="filter: invert(100%);margin: 1;">
+					</button>
+			</div>
+			$(endif)
+		</form>
+		<div class="contact col-xs-8 col-sm-8 col-md-6">
+			<div class=" text-center1 d-flex  justify-content-around mt-4 ">
+				<div class="icon d-flex flex-column text-center  ">
+					<a href="#" class="btn btn-success d-flex  ">
+					</a>
+					<p class="btn-label">الرئيسية</p>
+				</div>
+				<div class="icon d-flex text-center flex-column  ">
+					<a href="#" class="btn btn-success d-flex "><img src="img\geo-alt-fill.svg"></a>
+					<p class="btn-label">نقاط البيع</p>
+				</div>
+				<div class="icon d-flex flex-column  ">
+					<a href="#" class="btn btn-success d-flex "><img src="img\cash.svg"></a>
+					<p class="btn-label">الأسعار</p>
+				</div>
+				<div class="icon d-flex flex-column ">
+					<a href="#" class="btn btn-success d-flex ">
+						<img src="img\telephone-fill.svg"></a>
+					<p class="btn-label">أتصل بنا</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		document.getElementById("timeLeft").innerHTML = "$(session-time-left)".replace("w", " ����� , ").replace("d", " ��� , ").replace("h", " ���� , ").replace("m", " ����� , ").replace("s", " �����");
+	</script>
+	<input type="hidden"
+		value="=uptimestatus=$(uptime-secs)=timeleftstatus=$(session-time-left-secs)=downloadstatus=$(bytes-out-nice)=transferstatus=$(remain-bytes-total-nice)=">
+</body>
+
+</html>
